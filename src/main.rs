@@ -21,9 +21,20 @@ fn main() {
     };
 
     println!("Part1");
-    println!("{}", result1);
+    println!("{}\n", result1);
+
+    let mut result2:i32 = 0;
+    for i in (1..=3) {
+        if let Some(max_value) = calories.iter().max() {
+            if let Some(index) = calories.iter().position(|&i| i == *max_value) {
+                result2 += calories[index]; // max_value == calories[index]
+                calories.swap_remove(index);
+            }
+        }
+    }
 
     println!("Part2");
+    println!("{}\n", result2.to_string());
 }
 
 fn load_input_list(day_nr: i32) -> Vec<String> {
