@@ -8,3 +8,4 @@ description = "Advent of Code 2022 solutions in rust"
 
 [dependencies]
 chrono = "0.4.23"
+itertools = "0.10.5"
