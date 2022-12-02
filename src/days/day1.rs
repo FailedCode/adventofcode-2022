@@ -23,7 +23,7 @@ pub fn solve_part_2() -> String {
 }
 
 fn get_calories() -> Vec<i32> {
-    let list = crate::utils::load_input_list(1);
+    let list = crate::utils::load_input_list(1, "day");
     let mut calories: Vec<i32> = Vec::new();
     let mut current_sum: i32 = 0;
     for line in list {

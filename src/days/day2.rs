@@ -8,7 +8,7 @@ use std::collections::HashMap;
 // draw: 3
 // win: 6
 pub fn solve_part_1() -> String {
-    let input_rows = crate::utils::load_input_list(2);
+    let input_rows = crate::utils::load_input_list(2, "day");
     let mut points:u32 = 0;
     let mut scores_play = HashMap::new();
     scores_play.insert(String::from("X"), 1);
@@ -45,7 +45,7 @@ pub fn solve_part_1() -> String {
 // Y - draw
 // Z - win
 pub fn solve_part_2() -> String {
-    let input_rows = crate::utils::load_input_list(2);
+    let input_rows = crate::utils::load_input_list(2, "day");
     let mut points:u32 = 0;
 
     let mut scores_play = HashMap::new();
