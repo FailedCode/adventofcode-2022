@@ -11,14 +11,19 @@ fn main() {
 
     match day {
         1 => {
-            println!("Day1");
+            println!("Day 1");
             println!("Part1: {}", days::day1::solve_part_1());
             println!("Part2: {}", days::day1::solve_part_2());
         },
         2 => {
-            println!("Day2");
+            println!("Day 2");
             println!("Part1: {}", days::day2::solve_part_1());
             println!("Part2: {}", days::day2::solve_part_2());
+        },
+        3 => {
+            println!("Day 3");
+            println!("Part1: {}", days::day3::solve_part_1());
+            println!("Part2: {}", days::day3::solve_part_2());
         },
         _ => {
             println!("Not yet implemented!");
