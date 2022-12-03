@@ -22,7 +22,23 @@ pub fn solve_part_1() -> String {
 }
 
 pub fn solve_part_2() -> String {
-    "TODO: implement".to_string()
+    let mut priority_sum: u32 = 0;
+    let input_rows = crate::utils::load_input_list(3, "day");
+    let chunk_size = 3;
+    for rows in input_rows.chunks(chunk_size) {
+        let mut char_counter= HashMap::new();
+        for row in rows {
+            let chars = row.chars().sorted().unique().collect::<Vec<_>>();
+            for char in chars {
+                (*char_counter.entry(char).or_insert(0)) += 1;
+            }
+        }
+        let char_max = char_counter.iter()
+            .max_by(|a, b| a.1.cmp(&b.1))
+            .map(|(k, _v)| k).unwrap();
+        priority_sum += char_to_priority(char_max);
+    }
+    priority_sum.to_string()
 }
 
 fn char_to_priority(c:&char) -> u32 {
