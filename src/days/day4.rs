@@ -16,7 +16,25 @@ pub fn solve_part_1() -> String {
 }
 
 pub fn solve_part_2() -> String {
-    "TODO: implement".to_string()
+    let mut overlap_sum: u32 = 0;
+    let ranges = get_input_ranges();
+    for range in ranges {
+        let r1s  = range.get(0).unwrap();
+        let r1e  = range.get(1).unwrap();
+        let r2s  = range.get(2).unwrap();
+        let r2e  = range.get(3).unwrap();
+        if in_range(r1s, r2s, r2e) ||
+            in_range(r1e, r2s, r2e) ||
+            in_range(r2s, r1s, r1e) ||
+            in_range(r2e, r1s, r1e) {
+            overlap_sum += 1;
+        }
+    }
+    overlap_sum.to_string()
+}
+
+fn in_range(x:&u32, start:&u32, end:&u32) -> bool {
+    x >= start && x <= end
 }
 
 fn get_input_ranges() -> Vec<Vec<u32>> {
