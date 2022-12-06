@@ -30,6 +30,11 @@ fn main() {
             println!("Part1: {}", days::day4::solve_part_1());
             println!("Part2: {}", days::day4::solve_part_2());
         },
+        5 => {
+            println!("Day 5");
+            println!("Part1: {}", days::day5::solve_part_1());
+            println!("Part2: {}", days::day5::solve_part_2());
+        },
         _ => {
             println!("Not yet implemented!");
         },
